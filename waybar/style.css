@@ -1,0 +1,52 @@
+* {
+	border: none;
+	border-radius: 0;
+	font-family: "monospace";
+	font-size: 15px;
+	color: #acacac;
+	min-height: 0;
+	-gtk-icon-shadow: none;
+	text-shadow: none;
+	box-shadow: none;
+}
+
+window#waybar {
+	background-color: #000;
+}
+
+tooltip {
+	background-color: rgba(0, 0, 0, 0.8);
+	border-radius: 4px;
+}
+tooltip label {
+	color: #eee;
+}
+
+#battery.high   { color: #acacac; }
+#battery.medium { color: #efcc00; }
+#battery.low    { color: #e30022; }
+
+#memory.low    { color: #acacac; }
+#memory.medium { color: #efcc00; }
+#memory.high   { color: #e30022; }
+
+#cpu.low    { color: #acacac; }
+#cpu.medium { color: #efcc00; }
+#cpu.high   { color: #e30022; }
+
+#taskbar, #taskbar button {
+	all: unset;
+}
+#taskbar button label {
+	color: rgba(0, 0, 0, 0);
+	font-size: 0px;
+}
+#taskbar button.active label {
+	color: #acacac;
+	font-size: 15px;
+	margin-left: 14px;
+}
+
+#clock {
+	margin-right: 14px;
+}

@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<openbox_menu>
+  <!-- Note: for localization support of menu items "client-menu" has to be removed here -->
+  <menu id="client-menu">
+    <item label="Fullscreen"><action name="ToggleFullscreen" /></item>
+    <item label="Shade"><action name="ToggleShade" /></item>
+    <item label="Decorations"><action name="ToggleDecorations" /></item>
+    <item label="Always on top"><action name="ToggleAlwaysOnTop" /></item>
+    <item label="Omnipresent"><action name="ToggleOmnipresent" /></item>
+    <separator />
+    <item label="Close"><action name="Close" /></item>
+    <item label="Hide"><action name="Iconify" /></item>
+    <item label="Maximise"><action name="ToggleMaximize" /></item>
+    <!--
+      Any menu with the id "workspaces" will be hidden
+      if there is only a single workspace available.
+    -->
+    <menu id="workspaces" label="Workspace">
+      <item label="Move Left"><action name="SendToDesktop" to="left" /></item>
+      <item label="Move Right"><action name="SendToDesktop" to="right" /></item>
+      <separator />
+      <item label="Omnipresent"><action name="ToggleOmnipresent" /></item>
+    </menu>
+  </menu>
+
+  <menu id="root-menu">
+    <item label="Reconfigure"><action name="Reconfigure" /></item>
+    <separator />
+    <item label="Exit"><action name="Exit" /></item>
+    <item label="Reboot"><action name="Execute" command="loginctl reboot" /></item>
+    <item label="Shut down"><action name="Execute" command="loginctl poweroff" /></item>
+  </menu>
+</openbox_menu>

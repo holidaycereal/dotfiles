@@ -1,0 +1,195 @@
+<?xml version="1.0"?>
+<labwc_config>
+
+  <theme>
+    <name></name>
+    <cornerRadius>8</cornerRadius>
+    <font name="-apple-system" size="13"/>
+    <titlebar layout="close,iconify,max:"/>
+    <dropShadows>yes</dropShadows>
+  </theme>
+
+  <placement policy="cascade"/>
+
+  <!-- Workspaces -->
+  <desktops number="4" popupTime="400"/>
+
+  <windowSwitcher allWorkspaces="no">
+    <fields>
+      <field content="trimmed_identifier" width="20%"/>
+      <field content="title" width="80%"/>
+    </fields>
+  </windowSwitcher>
+
+  <keyboard>
+    <default/>
+    <repeatRate>30</repeatRate>
+    <repeatDelay>200</repeatDelay>
+
+    <!-- Run programs {{{ -->
+    <keybind key="A-Return"><action name="Execute" command="/home/alena/dev/wezterm/target/release/wezterm start --cwd ."/></keybind>
+    <keybind key="A-S-Return"><action name="Execute" command="nautilus"/></keybind>
+    <keybind key="A-Space"><action name="Execute" command="fuzzel"/></keybind>
+    <keybind key="W-l"><action name="Execute" command="swaylock -f -c 000000"/></keybind>
+
+    <keybind key="A-S-r"><action name="Execute" command="restart_labwc_waybar.sh"/></keybind>
+    <keybind key="A-S-l"><action name="Execute" command="toggle_theme.sh"/></keybind>
+    <keybind key="A-S-b"><action name="Execute" command="toggle_thinkpad_buttons.sh"/></keybind>
+
+    <keybind key="Print"><action name="Execute" command="grim"/></keybind>
+    <keybind key="C-Print"><action name="Execute" command="grim - | wl-copy"/></keybind>
+    <keybind key="S-Print"><action name="Execute" command="ss_region.sh"/></keybind>
+    <keybind key="C-S-Print"><action name="Execute" command="ss_region_copy.sh"/></keybind>
+
+    <keybind key="F5"><action name="Execute" command="asdcontrol /dev/usb/hiddev2 -- -5%"/></keybind>
+    <keybind key="F6"><action name="Execute" command="asdcontrol /dev/usb/hiddev2 +5%"/></keybind>
+
+    <!-- No-op -->
+    <keybind key="W-Return"/>
+    <keybind key="A-Up"/>
+    <keybind key="A-Down"/>
+    <keybind key="A-Left"/>
+    <keybind key="A-Right"/>
+    <!-- }}} -->
+
+    <!-- Desktops/workspaces {{{ -->
+    <keybind key="W-bracketleft">
+      <action name="GoToDesktop" to="left"/>
+    </keybind>
+    <keybind key="W-bracketright">
+      <action name="GoToDesktop" to="right"/>
+    </keybind>
+    <keybind key="W-S-bracketleft">
+      <action name="SendToDesktop" to="left"/>
+    </keybind>
+    <keybind key="W-S-bracketright">
+      <action name="SendToDesktop" to="right"/>
+    </keybind>
+    <keybind key="W-1"> <action name="GoToDesktop" to="1"/> </keybind>
+    <keybind key="W-2"> <action name="GoToDesktop" to="2"/> </keybind>
+    <keybind key="W-3"> <action name="GoToDesktop" to="3"/> </keybind>
+    <keybind key="W-4"> <action name="GoToDesktop" to="4"/> </keybind>
+    <keybind key="W-S-1"> <action name="SendToDesktop" to="1"/> </keybind>
+    <keybind key="W-S-2"> <action name="SendToDesktop" to="2"/> </keybind>
+    <keybind key="W-S-3"> <action name="SendToDesktop" to="3"/> </keybind>
+    <keybind key="W-S-4"> <action name="SendToDesktop" to="4"/> </keybind>
+    <!-- }}} -->
+
+    <!-- Window actions {{{ -->
+    <keybind key="A-S-c"> <action name="Close"/> </keybind>
+    <keybind key="A-S-9"> <action name="Kill"/> </keybind>
+    <keybind key="W-h"> <action name="Iconify"/> </keybind>
+    <keybind key="W-s"> <action name="ToggleShade"/> </keybind>
+    <keybind key="W-Space">
+      <action name="ShowMenu" menu="client-menu" atCursor="no"/>
+    </keybind>
+    <keybind key="W-f"> <action name="ToggleFullscreen"/> </keybind>
+    <keybind key="W-="> <action name="ToggleMaximize"/> </keybind>
+
+    <!-- Move -->
+    <keybind key="W-Up"> <action name="MoveToEdge" direction="up"/> </keybind>
+    <keybind key="W-Down">
+      <action name="MoveToEdge" direction="down"/>
+    </keybind>
+    <keybind key="W-Left">
+      <action name="MoveToEdge" direction="left"/>
+    </keybind>
+    <keybind key="W-Right">
+      <action name="MoveToEdge" direction="right"/>
+    </keybind>
+    <keybind key="W-C-Left">
+      <action name="ToggleSnapToEdge" direction="left"/>
+    </keybind>
+    <keybind key="W-C-Right">
+      <action name="ToggleSnapToEdge" direction="right"/>
+    </keybind>
+    <keybind key="W-S-Up">
+      <action name="MoveRelative" x="0" y="-25"/>
+    </keybind>
+    <keybind key="W-S-Down">
+      <action name="MoveRelative" x="0" y="25"/>
+    </keybind>
+    <keybind key="W-S-Left">
+      <action name="MoveRelative" x="-25" y="0"/>
+    </keybind>
+    <keybind key="W-S-Right">
+      <action name="MoveRelative" x="25" y="0"/>
+    </keybind>
+
+    <!-- Resize -->
+    <keybind key="W-\">
+      <action name="GrowToEdge" direction="up"/>
+      <action name="GrowToEdge" direction="down"/>
+    </keybind>
+    <keybind key="W-S-\">
+      <action name="ShrinkToEdge" direction="up"/>
+      <action name="ShrinkToEdge" direction="down"/>
+    </keybind>
+    <keybind key="W--">
+      <action name="GrowToEdge" direction="left"/>
+      <action name="GrowToEdge" direction="right"/>
+    </keybind>
+    <keybind key="W-S--">
+      <action name="ShrinkToEdge" direction="left"/>
+      <action name="ShrinkToEdge" direction="right"/>
+    </keybind>
+    <keybind key="W-,"> <action
+      name="ResizeRelative" left="-25" right="-25" top="-25" bottom="-25" />
+    </keybind>
+    <keybind key="W-."> <action
+      name="ResizeRelative" left="25" right="25" top="25" bottom="25" />
+    </keybind>
+    <keybind key="W-S-,"> <action
+      name="ResizeRelative" left="-25" right="-25" top="0" bottom="0"/>
+    </keybind>
+    <keybind key="W-S-."> <action
+      name="ResizeRelative" left="25" right="25" top="0" bottom="0"/>
+    </keybind>
+    <keybind key="W-C-,"> <action
+      name="ResizeRelative" left="0" right="0" top="-25" bottom="-25"/>
+    </keybind>
+    <keybind key="W-C-."> <action
+      name="ResizeRelative" left="0" right="0" top="25" bottom="25"/>
+    </keybind>
+    <!-- }}} -->
+  </keyboard>
+
+  <mouse>
+    <default/>
+    <doubleClickTime>350</doubleClickTime>
+
+    <context name="Root">
+      <mousebind button="Right" action="Press">
+        <action name="ShowMenu" menu="root-menu"/>
+      </mousebind>
+      <mousebind button="Left" action="Press"/>
+      <mousebind action="Scroll" direction="Up"/>
+      <mousebind action="Scroll" direction="Down"/>
+    </context>
+  </mouse>
+
+  <libinput>
+    <device category="touchpad">
+      <scrollFactor>0.5</scrollFactor>
+      <naturalScroll>yes</naturalScroll>
+      <tap>no</tap>
+      <clickMethod>clickfinger</clickMethod>
+      <pointerSpeed>0.3</pointerSpeed>
+    </device>
+
+    <device category="TPPS/2 JYT_Synaptics TrackPoint">
+      <sendEventsMode>no</sendEventsMode>
+      <pointerSpeed>-0.6</pointerSpeed>
+      <scrollFactor>0.1</scrollFactor>
+    </device>
+
+    <device category="non-touch">
+      <scrollFactor>0.8</scrollFactor>
+    </device>
+  </libinput>
+
+</labwc_config>
+
+<!--
+  vim: nowrap
+-->
