@@ -1,7 +1,5 @@
 -- theme & colorscheme setup
 
-_G.add({ source = 'navarasu/onedark.nvim' })
-
 -- sync theme with system light/dark mode
 function _G.theme_from_gtk()
   local success, handle = pcall(io.popen, 'gsettings get org.gnome.desktop.interface color-scheme')
