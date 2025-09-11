@@ -28,6 +28,7 @@ export GOPATH="$HOME/.go"
 # rust environment
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"
 
+# deno environment
 . "$HOME/.deno/env"
 
 # if running from tty1, start labwc
