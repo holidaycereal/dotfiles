@@ -16,6 +16,8 @@ local palettes = {
     comments   = '#cc8c3c',
     strings    = '#73c936',
     alt        = '#99a6a1',
+    info       = '#96a6c8',
+    special    = '#9e95c7',
 
     red        = '#e86671',
     orange     = '#d19a66',
@@ -23,8 +25,6 @@ local palettes = {
     cyan       = '#56b6c2',
     blue       = '#61afef',
     purple     = '#c678dd',
-    info       = '#96a6c8',
-    special    = '#9e95c7',
 
     dim_red    = '#993939',
     dim_orange = '#93691d',
@@ -48,6 +48,8 @@ local palettes = {
     comments   = '#3355ff',
     strings    = '#3c8828',
     alt        = '#78696e',
+    info       = '#65749b',
+    special    = '#736a98',
 
     red        = '#b83e47',
     orange     = '#a67042',
@@ -55,8 +57,6 @@ local palettes = {
     cyan       = '#3d7d8c',
     blue       = '#4876b8',
     purple     = '#9547a8',
-    info       = '#65749b',
-    special    = '#736a98',
 
     dim_red    = '#cd7680',
     dim_orange = '#c89968',
