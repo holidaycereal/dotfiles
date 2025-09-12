@@ -2,14 +2,8 @@ local wezterm = require 'wezterm'
 local act = wezterm.action
 local current_appearance = wezterm.gui.get_appearance()
 
-local light_scheme = { -- {{{
-  background = '#fafafa',
-  foreground = '#2e2a25',
-  selection_bg = '#005fff',
-  selection_fg = '#fafafa',
-  cursor_border = '#2e2a25',
-
-  ansi = {
+local term_cols = {
+  light = {
     '#2e2a25', -- black
     '#cc1000', -- red
     '#008800', -- green
@@ -19,16 +13,27 @@ local light_scheme = { -- {{{
     '#007878', -- cyan
     '#b2b4b8', -- white
   },
-  brights = {
-    '#2e2a25', -- black
-    '#cc0010', -- red
-    '#008800', -- green
-    '#c87800', -- yellow
-    '#0d57e8', -- blue
-    '#b232b2', -- magenta
-    '#007878', -- cyan
-    '#b2b4b8', -- white
+  dark = {
+    '#606660', -- black
+    '#ff6868', -- red
+    '#88dd68', -- green
+    '#e9b070', -- yellow
+    '#4c9cff', -- blue
+    '#d088de', -- magenta
+    '#68dddd', -- cyan
+    '#b2b8b2', -- white
   },
+}
+
+local light_scheme = { -- {{{
+  background = '#fafafa',
+  foreground = '#2e2a25',
+  selection_bg = '#005fff',
+  selection_fg = '#fafafa',
+  cursor_border = '#2e2a25',
+
+  ansi = term_cols.light,
+  brights = term_cols.light,
 
   tab_bar = {
     active_tab = {
@@ -61,26 +66,8 @@ local dark_scheme = {
   selection_fg = '#fafafa',
   cursor_border = '#e0dbd1',
 
-  ansi = {
-    '#606660', -- black
-    '#ff6868', -- red
-    '#88dd68', -- green
-    '#e9b070', -- yellow
-    '#4c9cff', -- blue
-    '#d088de', -- magenta
-    '#68dddd', -- cyan
-    '#b2b8b2', -- white
-  },
-  brights = {
-    '#606660', -- black
-    '#ff6868', -- red
-    '#88dd68', -- green
-    '#e9b070', -- yellow
-    '#4c9cff', -- blue
-    '#d088de', -- magenta
-    '#68dddd', -- cyan
-    '#b2b8b2', -- white
-  },
+  ansi = term_cols.dark,
+  brights = term_cols.dark,
 
   tab_bar = {
     active_tab = {

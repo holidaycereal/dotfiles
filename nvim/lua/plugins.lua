@@ -73,6 +73,6 @@ require('mini.tabline').setup({
   show_icons = false,
 })
 
-require('mini.completion').setup({
-  -- delay = { completion = 200, info = 200, signature = 200 },
-})
+-- require('mini.completion').setup({
+--   -- delay = { completion = 200, info = 200, signature = 200 },
+-- })

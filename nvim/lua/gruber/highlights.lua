@@ -229,6 +229,13 @@ function M.set_all()
     ['@markup.link']       = { underline = true, fg = c.special },
     ['@markup.link.label'] = { underline = true, fg = c.special },
     ['@markup.link.url']   = { underline = true, fg = c.special },
+    ['@markup.heading']    = { bold = true },
+    ['@markup.heading.1']  = { bold = true, fg = c.special },
+    ['@markup.heading.2']  = { bold = true, fg = c.info },
+    ['@markup.heading.3']  = { bold = true, fg = c.alt },
+    ['@markup.heading.4']  = { bold = true, fg = c.alt },
+    ['@markup.heading.5']  = { bold = true, fg = c.alt },
+    ['@markup.heading.6']  = { bold = true, fg = c.alt },
 
     ['@tag']           = { fg = c.alt },
     ['@tag.delimiter'] = { fg = c.alt },
