@@ -45,8 +45,8 @@ local palettes = {
     fg4 = '#b2b8b8',
 
     accent     = '#1133dd',
-    comments   = '#3355ff',
-    strings    = '#3c8828',
+    comments   = '#3373c3',
+    strings    = '#228b22',
     alt        = '#78696e',
     info       = '#65749b',
     special    = '#736a98',
