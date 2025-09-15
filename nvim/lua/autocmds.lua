@@ -37,7 +37,7 @@ autocmd('FileType', {
   callback = function()
     vim.wo.linebreak = true
     vim.wo.spell = true
-    vim.bo.textwidth = 80
+    -- vim.bo.textwidth = 80
   end,
 })
 

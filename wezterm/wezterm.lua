@@ -4,7 +4,7 @@ local current_appearance = wezterm.gui.get_appearance()
 
 local term_cols = {
   light = {
-    '#2e2a25', -- black
+    '#252a2e', -- black
     '#cc1000', -- red
     '#008800', -- green
     '#c87800', -- yellow
@@ -27,10 +27,10 @@ local term_cols = {
 
 local light_scheme = { -- {{{
   background = '#fafafa',
-  foreground = '#2e2a25',
+  foreground = '#252a2e',
   selection_bg = '#005fff',
   selection_fg = '#fafafa',
-  cursor_border = '#2e2a25',
+  cursor_border = '#252a2e',
 
   ansi = term_cols.light,
   brights = term_cols.light,
@@ -46,7 +46,7 @@ local light_scheme = { -- {{{
     },
     inactive_tab_hover = {
       bg_color = '#d4d4d8',
-      fg_color = '#2e2a25',
+      fg_color = '#252a2e',
     },
     new_tab = {
       bg_color = '#fafafa',

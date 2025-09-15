@@ -30,7 +30,7 @@ eval $(dircolors $HOME/.dir_colors)
 export EZA_COLORS="uu=3;2;0:gu=3;2;0:sc=0"
 
 # ls -> eza
-alias ls='eza --time=modified --no-user --git'
+alias ls='eza --time=modified --no-user --git --group-directories-first'
 alias ll='ls --no-permissions -lo'
 alias la='ls -a'
 alias lt='ls -snew'

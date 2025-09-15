@@ -231,7 +231,7 @@ function M.set_all()
     ['@markup.link.url']   = { underline = true, fg = c.special },
     ['@markup.heading']    = { bold = true },
     ['@markup.heading.1']  = { bold = true, fg = c.accent },
-    ['@markup.heading.2']  = { bold = true, fg = c.info },
+    ['@markup.heading.2']  = { bold = true, fg = c.comments },
     ['@markup.heading.3']  = { bold = true, fg = c.special },
     ['@markup.heading.4']  = { bold = true, fg = c.special },
     ['@markup.heading.5']  = { bold = true, fg = c.special },
@@ -263,7 +263,8 @@ function M.set_all()
     ['@lsp.type.parameter']                  = treesitter['@variable.parameter'],
     ['@lsp.type.property']                   = treesitter['@property'],
     ['@lsp.type.variable']                   = treesitter['@variable'],
-    ['@lsp.type.macro']                      = treesitter['@constant.macro'],
+    ['@lsp.type.macro']                      = treesitter['@function.macro'],
+    ['@lsp.type.macro.c']                    = treesitter['@constant.macro'],
     ['@lsp.type.method']                     = treesitter['@function.method'],
     ['@lsp.type.number']                     = treesitter['@number'],
     ['@lsp.type.generic']                    = treesitter['@type'],
@@ -275,13 +276,16 @@ function M.set_all()
     ['@lsp.typemod.variable.injected']       = treesitter['@variable'],
     ['@lsp.typemod.variable.defaultLibrary'] = treesitter['@constant'],
     ['@lsp.typemod.variable.static']         = treesitter['@constant'],
+
+    ['@lsp.type.selfTypeKeyword.rust'] = { fg = c.alt, italic = true },
+    ['@attribute.rust'] = { fg = c.alt },
   }
 
   local plugins = {
-    ['MiniHipatternsFixme']   = { bold = true },
-    ['MiniHipatternsHack']    = { bold = true },
-    ['MiniHipatternsNote']    = { bold = true },
-    ['MiniHipatternsTodo']    = { bold = true },
+    ['MiniHipatternsFixme']   = { reverse = true, bold = true },
+    ['MiniHipatternsHack']    = { reverse = true, bold = true },
+    ['MiniHipatternsNote']    = { reverse = true, bold = true },
+    ['MiniHipatternsTodo']    = { reverse = true, bold = true },
 
     ['MiniFilesTitleFocused'] = { fg = c.info },
     ['MiniFilesTitle']        = { fg = c.info },
