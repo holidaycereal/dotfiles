@@ -15,7 +15,7 @@ function _G.theme_from_gtk()
     vim.o.background = is_dark and 'dark' or 'light'
   end
 
-  vim.cmd.colorscheme('gruber')
+  vim.cmd.colorscheme('alenatheme')
 end
 
 theme_from_gtk()
