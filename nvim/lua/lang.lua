@@ -8,6 +8,7 @@ require('mason').setup()
 
 vim.diagnostic.config({
   virtual_text = true,
+  severity_sort = true,
 })
 
 -- vim.highlight.priorities.semantic_tokens = 95
@@ -67,7 +68,7 @@ local function get_typescript_root(bufnr, on_dir)
 end
 
 vim.lsp.config('deno_ls', {
-  cmd = { 'deno', 'lsp' },
+  -- cmd = { 'deno', 'lsp' },
   root_dir = function(bufnr, on_dir)
     get_typescript_root(bufnr, function(root_dir)
       -- only activate deno lsp if deno.json or deno.jsonc exists in the root

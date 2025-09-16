@@ -81,27 +81,27 @@ function M.set_all()
     ['TabLineFill']      = {},
 
     -- diff, spell, diagnostic
-    ['Added']                      = { fg = c.green },
-    ['Removed']                    = { fg = c.red },
-    ['Changed']                    = { fg = c.blue },
-    ['DiffAdd']                    = { fg = 'none', bg = c.dim_green },
-    ['DiffChange']                 = { fg = 'none', bg = c.dim_blue },
-    ['DiffDelete']                 = { fg = 'none', bg = c.dim_red },
-    ['DiffText']                   = { fg = 'none', bg = c.dim_cyan },
-    ['DiffAdded']                  = { fg = c.green },
-    ['DiffChanged']                = { fg = c.blue },
-    ['DiffRemoved']                = { fg = c.red },
-    ['DiffDeleted']                = { fg = c.red },
-    ['DiffFile']                   = { fg = c.cyan },
-    ['DiffIndexLine']              = { fg = c.fg3 },
-    ['SpellBad']                   = { fg = 'none', undercurl = true, sp = c.red },
-    ['SpellCap']                   = { fg = 'none', undercurl = true, sp = c.orange },
-    ['SpellLocal']                 = { fg = 'none', undercurl = true, sp = c.blue },
-    ['SpellRare']                  = { fg = 'none', undercurl = true, sp = c.purple },
+    ['Added']         = { fg = c.green },
+    ['Removed']       = { fg = c.red },
+    ['Changed']       = { fg = c.blue },
+    ['DiffAdd']       = { fg = 'none', bg = c.dim_green },
+    ['DiffChange']    = { fg = 'none', bg = c.dim_blue },
+    ['DiffDelete']    = { fg = 'none', bg = c.dim_red },
+    ['DiffText']      = { fg = 'none', bg = c.dim_cyan },
+    ['DiffAdded']     = { fg = c.green },
+    ['DiffChanged']   = { fg = c.blue },
+    ['DiffRemoved']   = { fg = c.red },
+    ['DiffDeleted']   = { fg = c.red },
+    ['DiffFile']      = { fg = c.cyan },
+    ['DiffIndexLine'] = { fg = c.fg3 },
+    ['SpellBad']      = { fg = 'none', undercurl = true, sp = c.red },
+    ['SpellCap']      = { fg = 'none', undercurl = true, sp = c.orange },
+    ['SpellLocal']    = { fg = 'none', undercurl = true, sp = c.blue },
+    ['SpellRare']     = { fg = 'none', undercurl = true, sp = c.purple },
     ['DiagnosticError']            = { fg = c.red },
     ['DiagnosticWarn']             = { fg = c.orange },
     ['DiagnosticInfo']             = { fg = c.info },
-    ['DiagnosticHint']             = { fg = c.special },
+    ['DiagnosticHint']             = { fg = c.purple },
     ['DiagnosticOk']               = { fg = c.green },
     ['DiagnosticVirtualTextError'] = { fg = c.dim_red,    bg = blend(c.dim_red,    c.bg1, 0.1) },
     ['DiagnosticVirtualTextWarn']  = { fg = c.dim_orange, bg = blend(c.dim_orange, c.bg1, 0.1) },
@@ -111,7 +111,7 @@ function M.set_all()
     ['DiagnosticUnderlineError']   = { undercurl = true, sp = c.red },
     ['DiagnosticUnderlineWarn']    = { undercurl = true, sp = c.orange },
     ['DiagnosticUnderlineInfo']    = { undercurl = true, sp = c.info },
-    ['DiagnosticUnderlineHint']    = { undercurl = true, sp = c.special },
+    ['DiagnosticUnderlineHint']    = { undercurl = true, sp = c.purple },
     ['DiagnosticUnderlineOk']      = { undercurl = true, sp = c.green },
     ['DiagnosticUnnecessary']      = {},
 
@@ -119,15 +119,15 @@ function M.set_all()
     ['String']         = { fg = c.strings },
     ['Character']      = { fg = c.strings },
     ['Tag']            = { fg = c.strings },
-    ['Number']         = { fg = c.alt },
-    ['Float']          = { fg = c.alt },
-    ['Boolean']        = { fg = c.alt },
     ['Type']           = { fg = c.alt },
     ['TypeDef']        = { fg = c.alt },
     ['Structure']      = { fg = c.alt },
     ['StorageClass']   = { fg = c.alt },
+    ['Number']         = { fg = c.alt },
+    ['Float']          = { fg = c.alt },
+    ['Boolean']        = { fg = c.alt },
     ['Constant']       = { fg = c.alt },
-    ['Macro']          = { fg = c.alt, bold = true },
+    ['Macro']          = { fg = c.accent },
     ['PreProc']        = { fg = c.accent, bold = true },
     ['PreCondit']      = { fg = c.accent, bold = true },
     ['Include']        = { fg = c.accent, bold = true },
@@ -182,20 +182,21 @@ function M.set_all()
     ['@type.builtin']    = common['Type'],
     ['@type.definition'] = common['Type'],
     ['@constructor']     = common['Type'],
-    ['@module']          = common['Type'],
-    ['@module.builtin']  = common['Type'],
+
+    ['@module']         = { fg = c.alt },
+    ['@module.builtin'] = { fg = c.alt },
 
     ['@function']             = common['Function'],
     ['@function.builtin']     = common['Function'],
     ['@function.call']        = common['Function'],
-    ['@function.macro']       = common['Function'],
+    ['@function.macro']       = common['Macro'],
     ['@function.method']      = common['Function'],
     ['@function.method.call'] = common['Function'],
 
     ['@keyword']                     = common['Keyword'],
     ['@keyword.coroutine']           = common['Keyword'],
     ['@keyword.function']            = common['Keyword'],
-    ['@keyword.operator']            = common['Keyword'],
+    ['@keyword.operator']            = { fg = c.accent },
     ['@keyword.import']              = common['Keyword'],
     ['@keyword.type']                = common['Keyword'],
     ['@keyword.modifier']            = common['Keyword'],
@@ -214,28 +215,28 @@ function M.set_all()
     ['@punctuation.bracket']   = common['Delimiter'],
     ['@punctuation.special']   = common['Delimiter'],
 
-    ['@attribute']           = common['Special'],
-    ['@attribute.builtin']   = common['Special'],
+    ['@attribute']         = { fg = c.comments },
+    ['@attribute.builtin'] = { fg = c.accent },
 
-    ['@comment']               = { fg = c.comments },
-    ['@comment.documentation'] = { fg = c.comments },
-    ['@comment.error']         = { fg = c.comments },
-    ['@comment.warning']       = { fg = c.comments },
-    ['@comment.todo']          = { fg = c.comments },
-    ['@comment.note']          = { fg = c.comments },
+    ['@comment']                       = { fg = c.comments },
+    ['@comment.documentation']         = { fg = c.comments },
+    ['@comment.error']                 = { fg = c.comments },
+    ['@comment.warning']               = { fg = c.comments },
+    ['@comment.todo']                  = { fg = c.comments },
+    ['@comment.note']                  = { fg = c.comments },
     ['@comment.note.comment']          = { fg = c.comments },
     ['@punctuation.delimiter.comment'] = { fg = c.comments },
 
-    ['@markup.link']       = { underline = true, fg = c.special },
-    ['@markup.link.label'] = { underline = true, fg = c.special },
-    ['@markup.link.url']   = { underline = true, fg = c.special },
+    ['@markup.link']       = { underline = true, fg = c.info },
+    ['@markup.link.label'] = { underline = true, fg = c.info },
+    ['@markup.link.url']   = { underline = true, fg = c.info },
     ['@markup.heading']    = { bold = true },
-    ['@markup.heading.1']  = { bold = true, fg = c.accent },
+    ['@markup.heading.1']  = { bold = true, fg = c.comments },
     ['@markup.heading.2']  = { bold = true, fg = c.comments },
-    ['@markup.heading.3']  = { bold = true, fg = c.special },
-    ['@markup.heading.4']  = { bold = true, fg = c.special },
-    ['@markup.heading.5']  = { bold = true, fg = c.special },
-    ['@markup.heading.6']  = { bold = true, fg = c.special },
+    ['@markup.heading.3']  = { bold = true, fg = c.comments },
+    ['@markup.heading.4']  = { bold = true, fg = c.comments },
+    ['@markup.heading.5']  = { bold = true, fg = c.comments },
+    ['@markup.heading.6']  = { bold = true, fg = c.comments },
 
     ['@tag']           = { fg = c.alt },
     ['@tag.delimiter'] = { fg = c.alt },
@@ -248,8 +249,12 @@ function M.set_all()
     ['@diff.minus']  = common['DiffDeleted'],
     ['@diff.delta']  = common['DiffChanged'],
 
-    -- for some reason `constructor.lua` means curly braces
-    ['@constructor.lua'] = common['Delimiter'],
+    ['@constructor.lua'] = common['Delimiter'], -- for some reason `constructor.lua` means curly braces
+
+    ['@keyword.exception.rust'] = common['Macro'], -- `panic!`, `assert!`
+    ['@attribute.rust'] = { fg = c.accent }, -- lifetime names
+
+    ['@variable.builtin.bash'] = common['Constant'], -- environment variables
   }
 
   local lsp = {
@@ -276,9 +281,10 @@ function M.set_all()
     ['@lsp.typemod.variable.injected']       = treesitter['@variable'],
     ['@lsp.typemod.variable.defaultLibrary'] = treesitter['@constant'],
     ['@lsp.typemod.variable.static']         = treesitter['@constant'],
+    ['@lsp.mod.attribute']                   = treesitter['@attribute'],
 
     ['@lsp.type.selfTypeKeyword.rust'] = { fg = c.alt, italic = true },
-    ['@attribute.rust'] = { fg = c.alt },
+    ['@lsp.mod.crateRoot.rust'] = { fg = c.alt },
   }
 
   local plugins = {
@@ -304,6 +310,8 @@ function M.set_all()
     ['MiniTablineModifiedCurrent'] = { fg = c.fg1, bg = c.bg4, italic = true },
     ['MiniTablineModifiedVisible'] = { fg = c.fg2, bg = c.bg3, italic = true },
     ['MiniTablineModifiedHidden']  = { fg = c.fg2, bg = c.bg3, italic = true },
+
+    ['MiniTrailspace'] = { bg = c.red },
   }
 
   local hl = vim.tbl_extend('error', common, treesitter, plugins, lsp)

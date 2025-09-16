@@ -15,22 +15,23 @@ local palettes = {
     accent     = '#eecc22',
     comments   = '#cc8c3c',
     strings    = '#73c936',
-    alt        = '#99a6a1',
-    info       = '#96a6c8',
+    alt        = '#99afa8',
+    alt2       = '#b4afa4',
+    info       = '#76a9c6',
     special    = '#9e95c7',
 
-    red        = '#e86671',
+    red        = '#e87681',
     orange     = '#d19a66',
     green      = '#98c379',
     cyan       = '#56b6c2',
-    blue       = '#61afef',
-    purple     = '#c678dd',
+    blue       = '#619fef',
+    purple     = '#9088dd',
 
-    dim_red    = '#993939',
+    dim_red    = '#893939',
     dim_orange = '#93691d',
     dim_green  = '#085339',
     dim_cyan   = '#2b6f77',
-    dim_purple = '#8a3fa0',
+    dim_purple = '#6c52a3',
   },
 
   light = {
@@ -45,14 +46,10 @@ local palettes = {
     fg4 = '#b2b8b8',
 
     accent     = '#1133dd',
-    -- comments   = '#3373c3', -- inverse of dark
-    -- comments   = '#6a5acd', -- css "slateblue"
-    comments   = '#8a2be3', -- css "blueviolet"
-    -- comments   = '#9932cc', -- css "darkorchid"
-    -- comments   = '#708090', -- css "slategrey"
-    -- comments   = '#778899', -- css "lightslategrey"
+    comments   = '#8a2be3',
     strings    = '#227b32',
     alt        = '#78595e',
+    alt2       = '#595e78',
     info       = '#5574ab',
     special    = '#735a98',
 
@@ -61,13 +58,13 @@ local palettes = {
     green      = '#6b8f4e',
     cyan       = '#3d7d8c',
     blue       = '#4876b8',
-    purple     = '#9547a8',
+    purple     = '#8850a8',
 
     dim_red    = '#cd7680',
     dim_orange = '#c89968',
     dim_green  = '#8db380',
     dim_cyan   = '#6bb8c2',
-    dim_purple = '#b090c2',
+    dim_purple = '#a080b2',
   },
 }
 
