@@ -25,6 +25,7 @@ enables = [
 	"counter-arrow-r",
 	"lteq-separate",
 	"gteq-separate",
+	"eqlt-separate",
 	"html-comment",
 ]
 

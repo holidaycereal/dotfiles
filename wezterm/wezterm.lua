@@ -160,3 +160,5 @@ local config = {
 }
 
 return config
+
+-- vim:nowrap
