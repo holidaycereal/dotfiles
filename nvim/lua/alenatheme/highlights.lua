@@ -118,7 +118,7 @@ function M.set_all()
     -- syntax
     ['String']         = { fg = c.strings },
     ['Character']      = { fg = c.strings },
-    ['Tag']            = { fg = c.strings },
+    ['Tag']            = { fg = c.alt2 },
     ['Type']           = { fg = c.alt },
     ['TypeDef']        = { fg = c.alt },
     ['Structure']      = { fg = c.alt },
@@ -153,8 +153,8 @@ function M.set_all()
 
   local treesitter = {
     ['@variable']           = common['Variable'],
-    ['@variable.member']    = common['Variable'],
     ['@variable.parameter'] = common['Variable'],
+    ['@variable.member']    = common['Variable'],
     ['@property']           = common['Variable'],
     ['@variable.builtin']           = { fg = c.fg1, italic = true },
     ['@variable.parameter.builtin'] = { fg = c.fg1, italic = true },
@@ -238,9 +238,9 @@ function M.set_all()
     ['@markup.heading.5']  = { bold = true, fg = c.comments },
     ['@markup.heading.6']  = { bold = true, fg = c.comments },
 
-    ['@tag']           = { fg = c.alt },
-    ['@tag.delimiter'] = { fg = c.alt },
-    ['@tag.builtin']   = { fg = c.alt },
+    ['@tag']           = { fg = c.alt2 },
+    ['@tag.builtin']   = { fg = c.alt2, bold = true },
+    ['@tag.delimiter'] = { fg = c.alt2 },
     ['@tag.attribute'] = { fg = c.fg1 },
 
     ['@diff.add']    = common['DiffAdded'],
@@ -249,12 +249,15 @@ function M.set_all()
     ['@diff.minus']  = common['DiffDeleted'],
     ['@diff.delta']  = common['DiffChanged'],
 
+    -- language-specific overrides
+    -- lua
     ['@constructor.lua'] = common['Delimiter'], -- for some reason `constructor.lua` means curly braces
-
     ['@keyword.exception.rust'] = common['Macro'], -- `panic!`, `assert!`
+    -- rust
     ['@attribute.rust'] = { fg = c.accent }, -- lifetime names
-
     ['@variable.builtin.bash'] = common['Constant'], -- environment variables
+    -- -- KDL
+    -- ['@tag.kdl'] = { fg = c.alt2 },
   }
 
   local lsp = {

@@ -17,7 +17,7 @@ local palettes = {
     strings    = '#73c936',
     alt        = '#99afa8',
     alt2       = '#b4afa4',
-    info       = '#76a9c6',
+    info       = '#76a9a9',
     special    = '#9e95c7',
 
     red        = '#e87681',
@@ -50,7 +50,7 @@ local palettes = {
     strings    = '#227b32',
     alt        = '#78595e',
     alt2       = '#595e78',
-    info       = '#5574ab',
+    info       = '#55748b',
     special    = '#735a98',
 
     red        = '#b82028',

@@ -31,5 +31,6 @@ export GOPATH="$HOME/.go"
 # deno environment
 . "$HOME/.deno/env"
 
-# if running from tty1, start labwc
+# if running from tty1, start a wayland compositor
 [ "$(tty)" = "/dev/tty1" ] && exec dbus-run-session labwc || true
+# [ "$(tty)" = "/dev/tty1" ] && niri --session || true

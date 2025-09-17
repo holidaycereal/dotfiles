@@ -45,7 +45,8 @@ require('mini.icons').setup()
 require('mini.files').setup({
   windows = {
     preview = true,
-    width_preview = 80,
+    width_preview = 70,
+    width_focus = 30,
   },
   -- -- disable icons
   -- content = {
