@@ -19,12 +19,16 @@ require('mini.ai').setup()
 require('mini.comment').setup()
 require('mini.trailspace').setup()
 
-require('mini.align').setup({
+local align = require('mini.align')
+local function align_nth_column_func(n)
+  return function(steps, _)
+    table.insert(steps.pre_justify, align.gen_step.filter('n==' .. n))
+  end
+end
+align.setup({
   modifiers = {
-    -- only align first column
-    F = function(steps, _)
-      table.insert(steps.pre_justify, require('mini.align').gen_step.filter('n==1'))
-    end,
+    ['1'] = align_nth_column_func('1'),
+    ['2'] = align_nth_column_func('2'),
   },
 })
 
@@ -45,7 +49,7 @@ require('mini.icons').setup()
 require('mini.files').setup({
   windows = {
     preview = true,
-    width_preview = 70,
+    width_preview = 65,
     width_focus = 30,
   },
   -- -- disable icons
@@ -77,3 +81,16 @@ require('mini.tabline').setup({
 require('mini.completion').setup({
   -- delay = { completion = 200, info = 200, signature = 200 },
 })
+
+-- custom text object for current search (e.g. vis = "view inside search")
+vim.keymap.set({'x', 'o'}, 'is', function()
+  -- get current search pattern from '/' register
+  local pattern = vim.fn.getreg('/')
+  if pattern == '' then return end
+  -- search forward and then backward to put cursor at start of current search
+  vim.fn.search(pattern)
+  vim.fn.search(pattern, 'b')
+  -- go into visual mode and move cursor to end of search
+  vim.cmd('normal! v')
+  vim.fn.search(pattern, 'e')
+end, { noremap=true, silent=true })

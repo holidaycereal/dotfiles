@@ -142,7 +142,7 @@ function M.set_all()
     ['Special']        = { fg = c.special },
     ['Identifier']     = { fg = c.fg1 },
     ['Variable']       = { fg = c.fg1 },
-    ['Function']       = { fg = c.fg1 },
+    ['Function']       = { fg = c.alt2 },
     ['Operator']       = { fg = c.fg1 },
     ['Delimiter']      = { fg = c.fg1 },
     ['SpecialChar']    = { fg = c.fg1 },

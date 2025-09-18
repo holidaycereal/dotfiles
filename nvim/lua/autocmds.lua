@@ -15,7 +15,7 @@ autocmd('TextYankPost', {
 })
 
 -- synchronise theme with system
-autocmd({ 'FocusGained', 'FocusLost' }, {
+autocmd({'FocusGained', 'FocusLost'}, {
   group = mkgroup('ThemeFromGtk'),
   callback = _G.theme_from_gtk,
 })
@@ -25,7 +25,8 @@ autocmd('FileType', {
   group = mkgroup('HelpCustom'),
   pattern = 'help',
   callback = function()
-    vim.wo.scrolloff = 999
+    vim.keymap.set({'n', 'v'}, 'j', '<C-e>', { buffer=true, noremap=true, silent=true })
+    vim.keymap.set({'n', 'v'}, 'k', '<C-y>', { buffer=true, noremap=true, silent=true })
     vim.wo.cursorline = false
   end,
 })
