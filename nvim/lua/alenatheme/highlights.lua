@@ -237,6 +237,10 @@ function M.set_all()
     ['@markup.heading.4']  = { bold = true, fg = c.comments },
     ['@markup.heading.5']  = { bold = true, fg = c.comments },
     ['@markup.heading.6']  = { bold = true, fg = c.comments },
+    ['@markup.raw']        = { fg = c.strings },
+    ['@markup.raw.block']  = { fg = c.strings },
+    ['@markup.quote']      = { fg = c.strings },
+    ['@markup.math']       = { fg = c.strings },
 
     ['@tag']           = { fg = c.alt2 },
     ['@tag.builtin']   = { fg = c.alt2, bold = true },
