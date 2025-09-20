@@ -50,7 +50,7 @@ local palettes = {
     -- strings    = '#227b32',
     strings    = '#9b3222',
     alt        = '#605858',
-    alt2       = '#394c60',
+    alt2       = '#394c70',
     info       = '#55748b',
     special    = '#735a98',
 
