@@ -25,8 +25,9 @@ autocmd('FileType', {
   group = mkgroup('HelpCustom'),
   pattern = 'help',
   callback = function()
-    vim.keymap.set({'n', 'v'}, 'j', '<C-e>', { buffer=true, noremap=true, silent=true })
-    vim.keymap.set({'n', 'v'}, 'k', '<C-y>', { buffer=true, noremap=true, silent=true })
+    -- vim.keymap.set({'n', 'v'}, 'j', '<C-e>', { buffer=true, noremap=true, silent=true })
+    -- vim.keymap.set({'n', 'v'}, 'k', '<C-y>', { buffer=true, noremap=true, silent=true })
+    vim.wo.scrolloff = 999
     vim.wo.cursorline = false
   end,
 })

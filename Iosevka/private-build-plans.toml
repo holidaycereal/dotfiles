@@ -31,9 +31,6 @@ enables = [
 
 [buildPlans.IosevkaArrows.variants.design]
 eight = "two-circles"
-l = "zshaped"
-t = "flat-hook-short-neck"
-f = "flat-hook-serifless-crossbar-at-x-height"
 asterisk = "penta-low"
 underscore = "above-baseline"
 caret = "medium"
@@ -42,11 +39,7 @@ percent = "rings-continuous-slash"
 [buildPlans.IosevkaArrows.variants.italic]
 eight = "two-circles"
 e = "flat-crossbar"
-i = "serifed-flat-tailed"
 k = "straight-bottom-right-serifed"
-l = "serifed-semi-tailed"
-t = "flat-hook-short-neck"
-f = "flat-hook-tailed-crossbar-at-x-height"
 asterisk = "penta-low"
 underscore = "above-baseline"
 percent = "rings-continuous-slash"

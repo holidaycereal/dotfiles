@@ -20,8 +20,7 @@ export XDG_SESSION_TYPE=wayland
 export XCURSOR_SIZE=28
 export QT_QPA_PLATFORMTHEME=qt6ct
 export GRIM_DEFAULT_DIR="$HOME/av/images/ss"
-export TERMINAL="$HOME/dev/wezterm/target/release/wezterm"
-export TERM=wezterm
+export TERMINAL="/usr/bin/foot"
 export DOTNET_ROOT="$HOME/.dotnet"
 export GOPATH="$HOME/.go"
 

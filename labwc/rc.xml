@@ -26,7 +26,7 @@
     <repeatDelay>200</repeatDelay>
 
     <!-- Run programs {{{ -->
-    <keybind key="A-Return"><action name="Execute" command="/home/alena/dev/wezterm/target/release/wezterm start --cwd ."/></keybind>
+    <keybind key="A-Return"><action name="Execute" command="foot"/></keybind>
     <keybind key="A-S-Return"><action name="Execute" command="nautilus"/></keybind>
     <keybind key="A-Space"><action name="Execute" command="fuzzel"/></keybind>
     <keybind key="W-l"><action name="Execute" command="swaylock -f -c 000000"/></keybind>

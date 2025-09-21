@@ -11,7 +11,13 @@ vim.diagnostic.config({
   severity_sort = true,
 })
 
--- vim.highlight.priorities.semantic_tokens = 95
+vim.lsp.config('*', {
+  capabilities = {
+    textDocument = {
+      completion = { completionItem = { snippetSupport = false } },
+    },
+  },
+})
 
 -- rust
 vim.lsp.enable('rust_analyzer')
