@@ -33,6 +33,6 @@ export GOPATH="$HOME/.go"
 # run wayland compositors depending on tty
 case "$(tty)" in
     "/dev/tty1") exec dbus-run-session labwc ;;
-    "/dev/tty2") niri --session ;;
+    "/dev/tty2") exec dbus-run-session sway ;;
     *) true ;;
 esac

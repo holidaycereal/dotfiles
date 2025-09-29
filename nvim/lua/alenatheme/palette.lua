@@ -46,11 +46,12 @@ local palettes = {
     fg4 = '#b2b8b8',
 
     accent     = '#1133dd',
-    comments   = '#7a4bc3',
+    -- comments   = '#7a4bc3',
+    comments   = '#22703c',
     -- strings    = '#227b32',
     strings    = '#9b3222',
-    alt        = '#605858',
-    alt2       = '#394c70',
+    alt        = '#585050',
+    alt2       = '#394c60',
     info       = '#55748b',
     special    = '#735a98',
 

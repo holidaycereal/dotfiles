@@ -140,8 +140,8 @@ function M.set_all()
     ['Error']          = { fg = c.red, bold = true },
     ['Label']          = { link = 'Title' },
     ['Special']        = { fg = c.special },
-    ['Identifier']     = { fg = c.fg1 },
-    ['Variable']       = { fg = c.fg1 },
+    ['Identifier']     = { },
+    ['Variable']       = { },
     ['Function']       = { fg = c.alt2 },
     ['Operator']       = { fg = c.fg1 },
     ['Delimiter']      = { fg = c.fg1 },
@@ -171,7 +171,8 @@ function M.set_all()
     ['@string.special']        = common['String'],
     ['@string.special.symbol'] = common['String'],
     ['@string.special.path']   = common['String'],
-    ['@string.special.url']    = { fg = c.strings, underline = true },
+    ['@string.special.url']         = { fg = c.strings,  underline = true },
+    ['@string.special.url.comment'] = { fg = c.comments, underline = true },
     ['@character']             = common['String'],
 
     ['@boolean']      = common['Boolean'],
@@ -253,15 +254,16 @@ function M.set_all()
     ['@diff.minus']  = common['DiffDeleted'],
     ['@diff.delta']  = common['DiffChanged'],
 
-    -- language-specific overrides
-    -- lua
     ['@constructor.lua'] = common['Delimiter'], -- for some reason `constructor.lua` means curly braces
     ['@keyword.exception.rust'] = common['Macro'], -- `panic!`, `assert!`
-    -- rust
     ['@attribute.rust'] = { fg = c.accent }, -- lifetime names
     ['@variable.builtin.bash'] = common['Constant'], -- environment variables
-    -- -- KDL
-    -- ['@tag.kdl'] = { fg = c.alt2 },
+    ['@keyword.import.c']             = { fg = c.accent },
+    ['@keyword.directive.c']          = { fg = c.accent },
+    ['@keyword.directive.define.c']   = { fg = c.accent },
+    ['@keyword.import.cpp']           = { fg = c.accent },
+    ['@keyword.directive.cpp']        = { fg = c.accent },
+    ['@keyword.directive.define.cpp'] = { fg = c.accent },
   }
 
   local lsp = {
@@ -276,11 +278,11 @@ function M.set_all()
     ['@lsp.type.property']                   = treesitter['@property'],
     ['@lsp.type.variable']                   = treesitter['@variable'],
     ['@lsp.type.macro']                      = treesitter['@function.macro'],
-    ['@lsp.type.macro.c']                    = treesitter['@constant.macro'],
     ['@lsp.type.method']                     = treesitter['@function.method'],
     ['@lsp.type.number']                     = treesitter['@number'],
     ['@lsp.type.generic']                    = treesitter['@type'],
     ['@lsp.type.builtinType']                = treesitter['@type.builtin'],
+    ['@lsp.type.operator']                   = {},
     ['@lsp.typemod.method.defaultLibrary']   = treesitter['@function'],
     ['@lsp.typemod.function.defaultLibrary'] = treesitter['@function'],
     ['@lsp.typemod.operator.injected']       = treesitter['@operator'],
@@ -290,8 +292,11 @@ function M.set_all()
     ['@lsp.typemod.variable.static']         = treesitter['@constant'],
     ['@lsp.mod.attribute']                   = treesitter['@attribute'],
 
+    ['@lsp.type.macro.c'] = treesitter['@constant.macro'],
+    ['@lsp.type.macro.cpp'] = treesitter['@constant.macro'],
     ['@lsp.type.selfTypeKeyword.rust'] = { fg = c.alt, italic = true },
     ['@lsp.mod.crateRoot.rust'] = { fg = c.alt },
+    ['@lsp.type.keyword.cs'] = {},
   }
 
   local plugins = {

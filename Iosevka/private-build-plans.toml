@@ -1,81 +1,81 @@
-[buildPlans.IosevkaArrows]
-family = "Iosevka Arrows"
-spacing = "fontconfig-mono"
+[buildPlans.IosevkaCustom]
+family = "Iosevka Custom"
+spacing = "fixed"
 serifs = "sans"
 noCvSs = true
 exportGlyphNames = false
 
-[buildPlans.IosevkaArrows.ligations]
-enables = [
-	"center-ops",
-	"center-op-trigger-plus-minus-l",
-	"center-op-trigger-plus-minus-r",
-	"center-op-trigger-equal-l",
-	"center-op-trigger-equal-r",
-	"center-op-trigger-bar-l",
-	"center-op-trigger-bar-r",
-	"center-op-trigger-angle-inside",
-	"center-op-influence-colon",
-	"kern-dotty",
-	"kern-bars",
-	"arrow-l",
-	"arrow-r",
-	"arrow-lr",
-	"counter-arrow-l",
-	"counter-arrow-r",
-	"lteq-separate",
-	"gteq-separate",
-	"eqlt-separate",
-	"html-comment",
-]
+# [buildPlans.IosevkaCustom.ligations]
+# enables = [
+# 	"center-ops",
+# 	"center-op-trigger-plus-minus-l",
+# 	"center-op-trigger-plus-minus-r",
+# 	"center-op-trigger-equal-l",
+# 	"center-op-trigger-equal-r",
+# 	"center-op-trigger-bar-l",
+# 	"center-op-trigger-bar-r",
+# 	"center-op-trigger-angle-inside",
+# 	"center-op-influence-colon",
+# 	"kern-dotty",
+# 	"kern-bars",
+# 	"arrow-l",
+# 	"arrow-r",
+# 	"arrow-lr",
+# 	"counter-arrow-l",
+# 	"counter-arrow-r",
+# 	"lteq-separate",
+# 	"gteq-separate",
+# 	"eqlt-separate",
+# 	"html-comment",
+# ]
 
-[buildPlans.IosevkaArrows.variants.design]
-eight = "two-circles"
-asterisk = "penta-low"
+[buildPlans.IosevkaCustom.variants.design]
+asterisk = "hex-low"
 underscore = "above-baseline"
-caret = "medium"
 percent = "rings-continuous-slash"
-
-[buildPlans.IosevkaArrows.variants.italic]
 eight = "two-circles"
+
+[buildPlans.IosevkaCustom.variants.italic]
 e = "flat-crossbar"
 k = "straight-bottom-right-serifed"
-asterisk = "penta-low"
+l = "tailed-serifed"
+asterisk = "hex-low"
 underscore = "above-baseline"
 percent = "rings-continuous-slash"
+eight = "two-circles"
 
-[buildPlans.IosevkaArrows.weights.Light]
+[buildPlans.IosevkaCustom.weights.Light]
 shape = 300
 menu = 300
 css = 300
 
-[buildPlans.IosevkaArrows.weights.Regular]
+[buildPlans.IosevkaCustom.weights.Regular]
 shape = 400
 menu = 400
 css = 400
 
-[buildPlans.IosevkaArrows.weights.SemiBold]
+[buildPlans.IosevkaCustom.weights.SemiBold]
 shape = 600
 menu = 600
 css = 600
 
-[buildPlans.IosevkaArrows.widths.Normal]
+[buildPlans.IosevkaCustom.widths.Normal]
 shape = 500
 menu = 5
 css = "normal"
 
-[buildPlans.IosevkaArrows.widths.Extended]
+[buildPlans.IosevkaCustom.widths.Extended]
 shape = 600
 menu = 7
 css = "expanded"
 
-[buildPlans.IosevkaArrows.slopes.Upright]
+[buildPlans.IosevkaCustom.slopes.Upright]
 angle = 0
 shape = "upright"
 menu = "upright"
 css = "normal"
 
-[buildPlans.IosevkaArrows.slopes.Italic]
+[buildPlans.IosevkaCustom.slopes.Italic]
 angle = 9.4
 shape = "italic"
 menu = "italic"
