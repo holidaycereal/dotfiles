@@ -105,16 +105,10 @@ vim.lsp.enable({ 'deno_ls', 'ts_ls' })
 -- }}}
 
 -- c#
--- this is the most ridiculous shit i have ever had to write
 vim.lsp.config('csharp_ls', {
-  on_attach = function(client, bufnr)
-    -- hack to make the language server wake up
-    vim.defer_fn(function()
-      vim.api.nvim_buf_call(bufnr, function()
-        vim.cmd("silent! normal! xu")
-      end)
-    end, 500)
-  end,
+  root_dir = vim.fs.find({'.sln', '.csproj'}, {
+    upward = true
+  })[1] or vim.fn.getcwd(),
   handlers = {
     -- suppress annoying messages that steal cursor focus
     ['window/showMessage'] = function() end,

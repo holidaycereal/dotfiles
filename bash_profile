@@ -7,6 +7,7 @@ prependpath $HOME/.local/bin
 prependpath $HOME/.dotnet
 prependpath $HOME/.dotnet/tools
 prependpath $HOME/dev/wezterm/target/release
+prependpath $HOME/.local/android-sdk/cmdline-tools/latest/bin
 
 export XDG_DATA_DIRS="/usr/local/share:/usr/share"
 export XDG_DATA_HOME="$HOME/.local/share"
@@ -23,6 +24,8 @@ export GRIM_DEFAULT_DIR="$HOME/av/images/ss"
 export TERMINAL="/usr/bin/foot"
 export DOTNET_ROOT="$HOME/.dotnet"
 export GOPATH="$HOME/.go"
+export ANDROID_HOME="$HOME/.local/android-sdk"
+export JAVA_HOME="/usr/lib/jvm/openjdk21"
 
 # rust environment
 [ -f "$HOME/.cargo/env" ] && source "$HOME/.cargo/env"

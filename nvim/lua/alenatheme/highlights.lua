@@ -6,12 +6,15 @@ local function blend(col1, col2, alpha)
     local r, g, b = string.match(hex_str, pattern)
     return { tonumber(r, 16), tonumber(g, 16), tonumber(b, 16) }
   end
+
   col1 = hex_to_rgb(col1)
   col2 = hex_to_rgb(col2)
+
   local function blendChannel(i)
-    local ret = (alpha * col1[i] + ((1 - alpha) * col2[i]))
+    local ret = alpha*col1[i] + (1-alpha)*col2[i]
     return math.floor(math.min(math.max(0, ret), 255) + 0.5)
   end
+
   return string.format("#%02X%02X%02X", blendChannel(1), blendChannel(2), blendChannel(3))
 end
 
@@ -141,7 +144,7 @@ function M.set_all()
     ['Label']          = { link = 'Title' },
     ['Special']        = { fg = c.special },
     ['Identifier']     = { },
-    ['Variable']       = { },
+    ['Variable']       = { fg = c.fg1 },
     ['Function']       = { fg = c.alt2 },
     ['Operator']       = { fg = c.fg1 },
     ['Delimiter']      = { fg = c.fg1 },
@@ -152,6 +155,7 @@ function M.set_all()
   }
 
   local treesitter = {
+    ['@none'] = { fg = c.fg1 },
     ['@variable']           = common['Variable'],
     ['@variable.parameter'] = common['Variable'],
     ['@variable.member']    = common['Variable'],
@@ -197,7 +201,8 @@ function M.set_all()
     ['@keyword']                     = common['Keyword'],
     ['@keyword.coroutine']           = common['Keyword'],
     ['@keyword.function']            = common['Keyword'],
-    ['@keyword.operator']            = { fg = c.accent },
+    -- ['@keyword.operator']            = { fg = c.accent },
+    ['@keyword.operator']            = common['Keyword'],
     ['@keyword.import']              = common['Keyword'],
     ['@keyword.type']                = common['Keyword'],
     ['@keyword.modifier']            = common['Keyword'],
@@ -216,7 +221,9 @@ function M.set_all()
     ['@punctuation.bracket']   = common['Delimiter'],
     ['@punctuation.special']   = common['Delimiter'],
 
-    ['@attribute']         = { fg = c.comments },
+    -- ['@attribute']         = { fg = blend(c.fg1, c.bg1, 0.67) },
+    -- ['@attribute.builtin'] = { fg = blend(c.fg1, c.bg1, 0.67) },
+    ['@attribute']         = { fg = c.alt2 },
     ['@attribute.builtin'] = { fg = c.accent },
 
     ['@comment']                       = { fg = c.comments },
@@ -232,19 +239,19 @@ function M.set_all()
     ['@markup.link.label'] = { underline = true, fg = c.info },
     ['@markup.link.url']   = { underline = true, fg = c.info },
     ['@markup.heading']    = { bold = true },
-    ['@markup.heading.1']  = { bold = true, fg = c.comments },
-    ['@markup.heading.2']  = { bold = true, fg = c.comments },
-    ['@markup.heading.3']  = { bold = true, fg = c.comments },
-    ['@markup.heading.4']  = { bold = true, fg = c.comments },
-    ['@markup.heading.5']  = { bold = true, fg = c.comments },
-    ['@markup.heading.6']  = { bold = true, fg = c.comments },
+    ['@markup.heading.1']  = { bold = true, fg = c.accent },
+    ['@markup.heading.2']  = { bold = true, fg = c.accent },
+    ['@markup.heading.3']  = { bold = true, fg = c.accent },
+    ['@markup.heading.4']  = { bold = true, fg = c.accent },
+    ['@markup.heading.5']  = { bold = true, fg = c.accent },
+    ['@markup.heading.6']  = { bold = true, fg = c.accent },
     ['@markup.raw']        = { fg = c.strings },
     ['@markup.raw.block']  = { fg = c.strings },
     ['@markup.quote']      = { fg = c.strings },
     ['@markup.math']       = { fg = c.strings },
 
     ['@tag']           = { fg = c.alt2 },
-    ['@tag.builtin']   = { fg = c.alt2, bold = true },
+    ['@tag.builtin']   = { fg = c.alt2 },
     ['@tag.delimiter'] = { fg = c.alt2 },
     ['@tag.attribute'] = { fg = c.fg1 },
 
@@ -317,13 +324,16 @@ function M.set_all()
     ['MiniPickMatchRanges']   = { fg = c.red },
 
     ['MiniTablineCurrent']         = { fg = c.fg1, bg = c.bg4 },
-    ['MiniTablineVisible']         = { fg = c.fg2, bg = c.bg3 },
+    ['MiniTablineVisible']         = { fg = c.fg1, bg = c.bg4 },
     ['MiniTablineHidden']          = { fg = c.fg2, bg = c.bg3 },
     ['MiniTablineModifiedCurrent'] = { fg = c.fg1, bg = c.bg4, italic = true },
-    ['MiniTablineModifiedVisible'] = { fg = c.fg2, bg = c.bg3, italic = true },
+    ['MiniTablineModifiedVisible'] = { fg = c.fg1, bg = c.bg4, italic = true },
     ['MiniTablineModifiedHidden']  = { fg = c.fg2, bg = c.bg3, italic = true },
 
     ['MiniTrailspace'] = { bg = c.red },
+
+    ['IblIndent'] = { fg = c.bg3 },
+    ['IblScope'] = { fg = c.bg4 },
   }
 
   local hl = vim.tbl_extend('error', common, treesitter, plugins, lsp)

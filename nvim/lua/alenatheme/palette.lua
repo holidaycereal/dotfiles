@@ -15,8 +15,8 @@ local palettes = {
     accent     = '#eecc22',
     comments   = '#cc8c3c',
     strings    = '#73c936',
-    alt        = '#9caca6',
-    alt2       = '#b4afa4',
+    alt        = '#acbcb6',
+    alt2       = '#bfacb9',
     info       = '#76a9a9',
     special    = '#9e95c7',
 
@@ -46,12 +46,12 @@ local palettes = {
     fg4 = '#b2b8b8',
 
     accent     = '#1133dd',
-    -- comments   = '#7a4bc3',
     comments   = '#22703c',
-    -- strings    = '#227b32',
     strings    = '#9b3222',
-    alt        = '#585050',
-    alt2       = '#394c60',
+
+    alt        = '#394c80',
+    alt2       = '#684870',
+
     info       = '#55748b',
     special    = '#735a98',
 

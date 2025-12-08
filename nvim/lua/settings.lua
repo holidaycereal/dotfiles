@@ -4,7 +4,7 @@ vim.g.mapleader = ' '
 vim.g.maplocalleader = ' '
 
 vim.o.termguicolors = true
-vim.o.autochdir = true
+vim.o.autochdir = false
 vim.o.undofile = true
 vim.o.title = true
 vim.o.tabstop = 4

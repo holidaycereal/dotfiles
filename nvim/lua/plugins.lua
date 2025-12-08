@@ -94,3 +94,6 @@ vim.keymap.set({'x', 'o'}, 'is', function()
   vim.cmd('normal! v')
   vim.fn.search(pattern, 'e')
 end, { noremap=true, silent=true })
+
+-- _G.add({ source = 'lukas-reineke/indent-blankline.nvim' })
+-- require('ibl').setup()

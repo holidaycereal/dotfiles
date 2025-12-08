@@ -35,10 +35,12 @@ alias ll='ls --no-permissions -lo'
 alias la='ls -a'
 alias lt='ls -snew'
 alias lr='ls -R'
+alias lla='ll -a'
 
 alias tree='tree -C --dirsfirst'
 
 # more aliases
+alias fastfetch='fastfetch --disable-linewrap'
 alias neofetch='fastfetch -l none'
 alias cpk='hyprpicker -n' # -n gets rid of fancy formatting
 alias wlc='wl-copy -n' # -n trims extra newline
@@ -57,7 +59,7 @@ field() {
 alias gs='git status'
 alias gd='git diff'
 # open all modified files in git branch in vim
-alias gim='vim -p $(git status | grep "modified:" | field 2)'
+alias gim='vim $(git status | grep "modified:" | field 2)'
 
 # only print exit code if not 0
 bad_exit() {
