@@ -194,9 +194,11 @@ function M.set_all()
     ['@function']             = common['Function'],
     ['@function.builtin']     = common['Function'],
     ['@function.call']        = common['Function'],
-    ['@function.macro']       = common['Macro'],
     ['@function.method']      = common['Function'],
     ['@function.method.call'] = common['Function'],
+    ['@function.declaration'] = { fg = c.alt2, bold = true },
+
+    ['@function.macro']       = common['Macro'],
 
     ['@keyword']                     = common['Keyword'],
     ['@keyword.coroutine']           = common['Keyword'],
@@ -290,6 +292,8 @@ function M.set_all()
     ['@lsp.type.generic']                    = treesitter['@type'],
     ['@lsp.type.builtinType']                = treesitter['@type.builtin'],
     ['@lsp.type.operator']                   = {},
+    ['@lsp.type.function']                   = treesitter['@function'],
+    ['@lsp.typemod.function.declaration']    = treesitter['@function.declaration'],
     ['@lsp.typemod.method.defaultLibrary']   = treesitter['@function'],
     ['@lsp.typemod.function.defaultLibrary'] = treesitter['@function'],
     ['@lsp.typemod.operator.injected']       = treesitter['@operator'],
