@@ -1,14 +1,13 @@
 {
   "layer": "top",
   "position": "bottom",
-  "height": 32,
+  "height": 30,
   "spacing": 30,
   "margin-bottom": -1,
   "reload_style_on_change": true,
 
   "modules-left": [
-    "sway/mode",
-    "sway/workspaces",
+    "wlr/taskbar",
   ],
   "modules-right": [
     "memory",
@@ -20,19 +19,14 @@
   ],
 
   // Left-side modules
-
-  "sway/mode": {
-    "format": "[{}]",
-    "max-length": 50,
-  },
-
-  "sway/workspaces": {
-    "disable-scroll": true,
-    "format": "{value}",
+  "wlr/taskbar": {
+    "active-first": true,
+    "markup": true,
+    "format": "<b>{name}</b>   {title}",
+    "tooltip": false,
   },
 
   // Right-side modules
-
   "network": {
     "format-wifi": "<span size=\"small\" rise=\"1pt\" font=\"Font Awesome 6 Free\">\uf1eb </span>{essid}",
     "format-ethernet": "ETH:{ifname}",

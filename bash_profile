@@ -14,14 +14,18 @@ export XDG_DATA_HOME="$HOME/.local/share"
 export XDG_STATE_HOME="$HOME/.local/state"
 export XDG_CONFIG_HOME="$HOME/.config"
 export QT_QPA_PLATFORM=wayland-egl
+export QT_QPA_PLATFORMTHEME=qt6ct
 export ELM_DISPLAY=wl
 export SDL_VIDEODRIVER=wayland
 export MOZ_ENABLE_WAYLAND=1
 export XDG_SESSION_TYPE=wayland
+export XDG_CURRENT_DESKTOP=wlroots
 export XCURSOR_SIZE=28
-export QT_QPA_PLATFORMTHEME=qt6ct
+export XCURSOR_THEME=macOS
+export XDG_SCREENSHOTS_DIR="$HOME/av/images/ss"
 export GRIM_DEFAULT_DIR="$HOME/av/images/ss"
 export TERMINAL="/usr/bin/foot"
+
 export DOTNET_ROOT="$HOME/.dotnet"
 export GOPATH="$HOME/.go"
 export ANDROID_HOME="$HOME/.local/android-sdk"
@@ -35,7 +39,10 @@ export JAVA_HOME="/usr/lib/jvm/openjdk21"
 
 # run wayland compositors depending on tty
 case "$(tty)" in
-    "/dev/tty1") exec dbus-run-session labwc ;;
-    "/dev/tty2") exec dbus-run-session sway ;;
+    "/dev/tty1")
+        export XDG_CURRENT_DESKTOP=sway:wlroots
+        exec dbus-run-session sway
+        ;;
+    "/dev/tty2") exec dbus-run-session labwc ;;
     *) true ;;
 esac

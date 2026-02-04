@@ -2,7 +2,7 @@
 	border: none;
 	border-radius: 0;
 	font-family: "monospace";
-	font-size: 15px;
+	font-size: 16px;
 	color: #acacac;
 	min-height: 0;
 	-gtk-icon-shadow: none;
@@ -21,6 +21,41 @@ tooltip {
 tooltip label {
 	color: #eee;
 }
+
+/* Left-side modules */
+
+#mode {
+  padding: 0 10px;
+}
+
+#workspaces {
+  padding-bottom: 1px;
+}
+#workspaces button {
+  all: unset;
+  padding: 0 12px;
+  border: 1px solid #333333;
+  background-color: #282828;
+}
+#workspaces button label {
+  color: #b2b2b2;
+}
+#workspaces button:hover {
+  border: 1px solid #484848;
+  background-color: #3c3c3c;
+}
+#workspaces button:hover label {
+  color: #dddddd;
+}
+#workspaces button.focused {
+  border: 1px solid #3c6889;
+  background-color: #285577;
+}
+#workspaces button.focused label {
+  color: #eeeeee;
+}
+
+/* Right-side modules */
 
 #battery.high   { color: #acacac; }
 #battery.medium { color: #efcc00; }

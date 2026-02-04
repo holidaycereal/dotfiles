@@ -85,6 +85,29 @@ update_title() {
 PROMPT_COMMAND='update_title;'
 trap 'update_title;' WINCH
 
+# make man pages update the terminal window title
+man() {
+    local section=""
+    local page=""
+
+    for arg in "$@"; do
+        if [[ "$arg" =~ ^[0-9]+$ ]]; then
+            section="$arg"
+        elif [[ "$arg" != -* ]]; then
+            page="$arg"
+        fi
+    done
+
+    if [[ -n "$section" ]]; then
+        echo -ne "\033]0;man: $page($section)\007"
+    else
+        echo -ne "\033]0;man: $page\007"
+    fi
+
+    command man "$@"
+    echo -ne "\033]0;$(basename "$PWD")\007"
+}
+
 # show all the terminal colours
 cols() {
     for col in {0..255}; do
