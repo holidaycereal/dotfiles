@@ -7,8 +7,10 @@
   "reload_style_on_change": true,
 
   "modules-left": [
-    "sway/mode",
     "sway/workspaces",
+  ],
+  "modules-center": [
+    "sway/mode",
   ],
   "modules-right": [
     "memory",
@@ -21,14 +23,16 @@
 
   // Left-side modules
 
-  "sway/mode": {
-    "format": "[{}]",
-    "max-length": 50,
-  },
-
   "sway/workspaces": {
     "disable-scroll": true,
     "format": "{value}",
+  },
+
+  // Centre modules
+
+  "sway/mode": {
+    "format": "[{}]",
+    "max-length": 50,
   },
 
   // Right-side modules
