@@ -11,7 +11,7 @@ exec swaymsg "workspace 1; move workspace to output eDP-1; workspace 2; move wor
 ### Colours
 
 # class                 border      background  text        indicator   child_border
-client.focused          #3c6889     #285577     #eeeeee     #5884af     #285577
+client.focused        #3c6889     #285577     #f6f6f6     #5884af     #285577
 client.focused_inactive #484848     #3c3c3c     #dddddd     #484848     #484848
 client.unfocused        #333333     #282828     #b2b2b2     #333333     #333333
 
@@ -44,13 +44,16 @@ exec pipewire >/dev/null 2>&1 &
 # activation environments so tools that rely on them work properly."
 exec dbus-update-activation-environment WAYLAND_DISPLAY DISPLAY XDG_CURRENT_DESKTOP SWAYSOCK I3SOCK XCURSOR_SIZE XCURSOR_THEME
 
-# Lock screen after 600 seconds of inactivity, then turn off displays after
-# another 600 seconds, and turn screens back on when resumed. Also lock screen
-# when computer goes to sleep.
-exec swayidle -w \
-         timeout 600 'swaylock -f -c 000000' \
-         timeout 1200 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
-         before-sleep 'swaylock -f -c 000000'
+# # Lock screen after 600 seconds of inactivity, then turn off displays after
+# # another 600 seconds, and turn screens back on when resumed. Also lock screen
+# # when computer goes to sleep.
+# exec swayidle -w \
+#          timeout 600 'swaylock -f -c 000000' \
+#          timeout 1200 'swaymsg "output * power off"' resume 'swaymsg "output * power on"' \
+#          before-sleep 'swaylock -f -c 000000'
+
+# Just sleep after 1200 seconds, no locking screen
+exec swayidle -w timeout 1200 'swaymsg "output * power off"' resume 'swaymsg "output * power on"'
 
 ### Input (list all inputs: `swaymsg -t get_inputs`)
 
@@ -81,8 +84,7 @@ bindsym $mod+Return exec $term
 bindsym $mod+Shift+Return exec nautilus
 bindsym Mod1+Shift+l exec toggle_theme_sway.sh
 bindsym $mod+Shift+r reload
-# bindsym $mod+Escape exec swaynag -t warning -m 'Exit sway? This will end your Wayland session.' -B 'Exit' 'swaymsg exit'
-bindsym $mod+Escape exec "printf 'log out\nreboot\nshut down' | tofi --output=$(swaymsg -r -t get_outputs | jq -r '.[] | select(.focused? == true) | .name') | handle_menu_option.sh"
+bindsym $mod+Escape exec "printf 'lock screen\nlog out\nreboot\nshut down' | tofi --output=$(swaymsg -r -t get_outputs | jq -r '.[] | select(.focused? == true) | .name') | handle_menu_option.sh"
 
 # Drag floating windows by holding down $mod and left mouse button.
 # Resize them with right mouse button + $mod.

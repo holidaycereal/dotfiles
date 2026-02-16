@@ -48,7 +48,7 @@ tooltip label {
   background-color: #285577;
 }
 #workspaces button.focused label {
-  color: #eeeeee;
+  color: #f6f6f6;
 }
 
 /* Right-side modules */
