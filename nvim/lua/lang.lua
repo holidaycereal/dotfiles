@@ -23,6 +23,13 @@ vim.lsp.config('*', {
 vim.lsp.enable('rust_analyzer')
 
 -- haskell
+vim.lsp.config('hls', {
+  settings = {
+    haskell = {
+      plugin = { rename = { config = { crossModule = true } } }
+    }
+  }
+})
 vim.lsp.enable('hls')
 
 -- ocaml
@@ -34,9 +41,11 @@ vim.lsp.enable('clangd')
 
 -- lua
 vim.lsp.config('lua_ls', {
-  settings = { Lua = {
-    diagnostics = { globals = { 'vim' } } },
-  },
+  settings = {
+    Lua = {
+      diagnostics = { globals = { 'vim' } }
+    }
+  }
 })
 vim.lsp.enable('lua_ls')
 
