@@ -1,19 +1,14 @@
 -- plugin setup and config
 
-_G.add({
-  source = 'nvim-treesitter/nvim-treesitter',
-  checkout = 'master',
-  monitor = 'main',
-  hooks = {
-    post_checkout = function() vim.cmd('TSUpdate') end,
-  },
-})
+vim.pack.add({ 'https://github.com/neovim/nvim-lspconfig' })
 
-require('nvim-treesitter.configs').setup({
-  auto_install = true,
-  highlight = { enable = true },
-  indent = { enable = true },
-})
+vim.pack.add({ 'https://github.com/williamboman/mason.nvim' })
+require('mason').setup()
+
+vim.pack.add({ 'https://github.com/romus204/tree-sitter-manager.nvim' })
+require('tree-sitter-manager').setup({ auto_install = true })
+
+vim.pack.add({ 'https://github.com/nvim-mini/mini.nvim' })
 
 require('mini.ai').setup()
 require('mini.comment').setup()
@@ -94,6 +89,3 @@ vim.keymap.set({'x', 'o'}, 'is', function()
   vim.cmd('normal! v')
   vim.fn.search(pattern, 'e')
 end, { noremap=true, silent=true })
-
--- _G.add({ source = 'lukas-reineke/indent-blankline.nvim' })
--- require('ibl').setup()

@@ -1,10 +1,4 @@
--- per-language config (mostly lsp)
-
-_G.add({
-  source = 'neovim/nvim-lspconfig',
-  depends = { 'williamboman/mason.nvim' },
-})
-require('mason').setup()
+-- per-language config (lsp and treesitter)
 
 vim.diagnostic.config({
   virtual_text = true,
@@ -24,11 +18,7 @@ vim.lsp.enable('rust_analyzer')
 
 -- haskell
 vim.lsp.config('hls', {
-  settings = {
-    haskell = {
-      plugin = { rename = { config = { crossModule = true } } }
-    }
-  }
+  settings = { haskell = { plugin = { rename = { config = { crossModule = true } } } } }
 })
 vim.lsp.enable('hls')
 
@@ -41,11 +31,7 @@ vim.lsp.enable('clangd')
 
 -- lua
 vim.lsp.config('lua_ls', {
-  settings = {
-    Lua = {
-      diagnostics = { globals = { 'vim' } }
-    }
-  }
+  settings = { Lua = { diagnostics = { globals = { 'vim' } } } }
 })
 vim.lsp.enable('lua_ls')
 

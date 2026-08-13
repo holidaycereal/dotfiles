@@ -11,7 +11,7 @@ exec swaymsg "workspace 1; move workspace to output eDP-1; workspace 2; move wor
 ### Colours
 
 # class                 border      background  text        indicator   child_border
-client.focused        #3c6889     #285577     #f6f6f6     #5884af     #285577
+client.focused          #3c6889     #285577     #f6f6f6     #5884af     #285577
 client.focused_inactive #484848     #3c3c3c     #dddddd     #484848     #484848
 client.unfocused        #333333     #282828     #b2b2b2     #333333     #333333
 
