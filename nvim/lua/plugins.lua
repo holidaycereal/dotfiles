@@ -1,15 +1,14 @@
 -- plugin setup and config
 
-vim.pack.add({ 'https://github.com/neovim/nvim-lspconfig' })
+vim.pack.add({
+  'https://github.com/neovim/nvim-lspconfig',
+  'https://github.com/williamboman/mason.nvim',
+  'https://github.com/romus204/tree-sitter-manager.nvim',
+  'https://github.com/nvim-mini/mini.nvim',
+})
 
-vim.pack.add({ 'https://github.com/williamboman/mason.nvim' })
 require('mason').setup()
-
-vim.pack.add({ 'https://github.com/romus204/tree-sitter-manager.nvim' })
 require('tree-sitter-manager').setup({ auto_install = true })
-
-vim.pack.add({ 'https://github.com/nvim-mini/mini.nvim' })
-
 require('mini.ai').setup()
 require('mini.comment').setup()
 require('mini.trailspace').setup()

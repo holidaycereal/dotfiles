@@ -1,4 +1,4 @@
--- per-language config (lsp and treesitter)
+-- per-language config (mostly lsp)
 
 vim.diagnostic.config({
   virtual_text = true,
